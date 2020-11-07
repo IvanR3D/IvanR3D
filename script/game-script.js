@@ -1,38 +1,42 @@
-function game(user, com) {
-    
-    if (user === "piedra" && com === "tijera" || user === "papel" && com === "piedra" || user === "tijera" && com === "papel") {
-        return "Ganaste";
-    }
-
-    else if (user === "papel" && com === "tijera" || user === "tijera" && com === "piedra" || user === "piedra" && com === "papel") {
-        return "Perdiste";
-    }
-
-    else if (user === com) {
-        return "Empate"
-    }
-
-    else {
-        return "Error: Has ingresado algún valor incorrecto. Escribe las opciones correctamente y en minúscula."
-    }
-
-}
-
-function clicked(e) {
-    if (e === "rock") {
-        alert("Piedra");
-    } else if (e === "paper") {
-        alert("Papel");
-    } else {
-        alert("Tijera");
-    }
-    
-}
-
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scisor = document.getElementById("scisor");
 
-rock.addEventListener("click", function(){ clicked('rock'); });
-paper.addEventListener("click", function(){ clicked('paper'); });
-scisor.addEventListener("click", function(){ clicked('scisor'); });
+const com = Math.round(Math.random() * 2);
+var comImg;
+
+switch (com) {
+    case 0:
+        comImg = "rock";        
+        break;
+    case 1:
+        comImg = "paper";
+        break;
+    default:
+        comImg = "scisor";
+        break;
+}
+
+function game(user, com) {
+    
+    if (user === "rock" && com === "scisor" || user === "paper" && com === "rock" || user === "scisor" && com === "paper") {
+        alert("Ganaste");
+    }
+
+    else if (user === "paper" && com === "scisor" || user === "scisor" && com === "rock" || user === "rock" && com === "paper") {
+        alert("Perdiste");
+    }
+
+    else if (user === com) {
+        alert("Empate");
+    }
+
+    else {
+        return "Error: Has ingresado algún valor incorrecto. Escribe las opciones correctamente y en minúscula.";
+    }
+
+}
+
+rock.addEventListener("click", function(){ game('rock', comImg); });
+paper.addEventListener("click", function(){ game('paper', comImg); });
+scisor.addEventListener("click", function(){ game('scisor', comImg); });
