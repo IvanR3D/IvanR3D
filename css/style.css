@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    /* Reiniciamos margin y padding en * para evitar que cuando el navegador renderice elementos les otorge valores por defecto.*/
+    margin: 0;
+    padding: 0;
+}
+html {
+    /* Con el font-size en 62.5% se controlan los cambios de pixeles que pueden generar diferentes pantallas.*/
+    font-size: 62.5%;
+}
+.game-zone {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: seashell;
+}
+.game-zone li {
+    list-style-type: none;
+}
+.game-zone img {
+    width: 100px;
+    height: 100px;
+}
+.game-zone .vs {
+    font-size: 2rem;
+    font-weight: bold;
+}
