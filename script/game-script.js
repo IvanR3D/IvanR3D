@@ -18,3 +18,21 @@ function game(user, com) {
 
 }
 
+function clicked(e) {
+    if (e === "rock") {
+        alert("Piedra");
+    } else if (e === "paper") {
+        alert("Papel");
+    } else {
+        alert("Tijera");
+    }
+    
+}
+
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scisor = document.getElementById("scisor");
+
+rock.addEventListener("click", function(){ clicked('rock'); });
+paper.addEventListener("click", function(){ clicked('paper'); });
+scisor.addEventListener("click", function(){ clicked('scisor'); });
