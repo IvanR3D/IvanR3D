@@ -20,15 +20,42 @@ switch (com) {
 function game(user, com) {
     
     if (user === "rock" && com === "scisor" || user === "paper" && com === "rock" || user === "scisor" && com === "paper") {
-        alert("Ganaste");
+        Swal.fire({
+            title: '¡Ganaste!',
+            html:
+            '<div style="display:flex; flex-direction:row; justify-content:center;align-items:center;width:100%;">' +
+            '<img src="./img/'+user+'.png" style="width:50px;"/>' + '<h3> VS </h3>' +
+            '<img src="./img/'+com+'.png" style="width:50px;"/>' +
+            '</div>',
+            icon: 'success',
+            confirmButtonText: 'Volver a jugar'
+          })
     }
 
     else if (user === "paper" && com === "scisor" || user === "scisor" && com === "rock" || user === "rock" && com === "paper") {
-        alert("Perdiste");
+        Swal.fire({
+            title: '¡Perdiste!',
+            html:
+            '<div style="display:flex; flex-direction:row; justify-content:center;align-items:center;width:100%;">' +
+            '<img src="./img/'+user+'.png" style="width:50px;"/>' + '<h3> VS </h3>' +
+            '<img src="./img/'+com+'.png" style="width:50px;"/>' +
+            '</div>',
+            icon: 'error',
+            confirmButtonText: 'Volver a jugar'
+          })
     }
 
     else if (user === com) {
-        alert("Empate");
+        Swal.fire({
+            title: '¡Empate!',
+            html:
+            '<div style="display:flex; flex-direction:row; justify-content:center;align-items:center;width:100%;">' +
+            '<img src="./img/'+user+'.png" style="width:50px;"/>' + '<h3> VS </h3>' +
+            '<img src="./img/'+com+'.png" style="width:50px;"/>' +
+            '</div>',
+            icon: 'info',
+            confirmButtonText: 'Volver a jugar'
+          })
     }
 
     else {
