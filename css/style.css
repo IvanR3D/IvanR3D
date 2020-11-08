@@ -22,12 +22,22 @@ header h1 {
 header h3 {
     font-size: 1.5rem;
 }
+.scoreboard {
+    position: relative;
+    top: 9rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.scoreboard table {
+    width: 100%;
+}
 .game-zone {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 85vh;
     margin: auto;
 }
 .game-zone--player {

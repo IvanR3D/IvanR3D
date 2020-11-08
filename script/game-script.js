@@ -2,19 +2,22 @@ const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scisor = document.getElementById("scisor");
 
-const com = Math.round(Math.random() * 2);
-var comImg;
+var playerPoints = document.getElementById("player-points");
+var comPoints = document.getElementById("com-points");
 
-switch (com) {
-    case 0:
-        comImg = "rock";        
-        break;
-    case 1:
-        comImg = "paper";
-        break;
-    default:
-        comImg = "scisor";
-        break;
+playerPoints.innerText = "0";
+comPoints.innerText = "0";
+
+function comChoose() {
+    let com = Math.round(Math.random() * 2);
+
+    if (com == 0) {
+        return "rock";
+    } else if (com == 1) {
+        return "paper";
+    } else {
+        return "scisor";
+    }
 }
 
 function game(user, com) {
@@ -64,6 +67,6 @@ function game(user, com) {
 
 }
 
-rock.addEventListener("click", function(){ game('rock', comImg); });
-paper.addEventListener("click", function(){ game('paper', comImg); });
-scisor.addEventListener("click", function(){ game('scisor', comImg); });
+rock.addEventListener("click", function(){ game('rock', comChoose()); });
+paper.addEventListener("click", function(){ game('paper', comChoose()); });
+scisor.addEventListener("click", function(){ game('scisor', comChoose()); });
