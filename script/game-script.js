@@ -3,6 +3,7 @@ const paper = document.getElementById("paper");
 const scisor = document.getElementById("scisor");
 const comLi = document.getElementsByClassName("com")[0];
 
+var com;
 var playerPoints = document.getElementById("player-points");
 var comPoints = document.getElementById("com-points");
 var playerScore = 0;
@@ -12,7 +13,7 @@ playerPoints.innerText = playerScore + '';
 comPoints.innerText = comScore + '';
 
 function comChoose() {
-    let com = Math.round(Math.random() * 2);
+    com = Math.round(Math.random() * 2);
 
     if (com == 0) {
         return "rock";
@@ -33,7 +34,7 @@ function game(user, com) {
         Swal.fire({
             title: '¡Ganaste!',
             html:
-            '<div style="display:flex; flex-direction:row; justify-content:center;align-items:center;width:100%;">' +
+            '<div style="display:flex; flex-direction:row; justify-content:space-around;align-items:center;width:100%;">' +
             '<img src="./img/'+user+'.png" style="width:50px;"/>' + '<h3> VS </h3>' +
             '<img src="./img/'+com+'.png" style="width:50px;"/>' +
             '</div>',
@@ -51,7 +52,7 @@ function game(user, com) {
         Swal.fire({
             title: '¡Perdiste!',
             html:
-            '<div style="display:flex; flex-direction:row; justify-content:center;align-items:center;width:100%;">' +
+            '<div style="display:flex; flex-direction:row; justify-content:space-around;align-items:center;width:100%;">' +
             '<img src="./img/'+user+'.png" style="width:50px;"/>' + '<h3> VS </h3>' +
             '<img src="./img/'+com+'.png" style="width:50px;"/>' +
             '</div>',
@@ -67,7 +68,7 @@ function game(user, com) {
         Swal.fire({
             title: '¡Empate!',
             html:
-            '<div style="display:flex; flex-direction:row; justify-content:center;align-items:center;width:100%;">' +
+            '<div style="display:flex; flex-direction:row; justify-content:space-around;align-items:center;width:100%;">' +
             '<img src="./img/'+user+'.png" style="width:50px;"/>' + '<h3> VS </h3>' +
             '<img src="./img/'+com+'.png" style="width:50px;"/>' +
             '</div>',
