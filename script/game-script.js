@@ -1,6 +1,7 @@
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scisor = document.getElementById("scisor");
+const comLi = document.getElementsByClassName("com")[0];
 
 var playerPoints = document.getElementById("player-points");
 var comPoints = document.getElementById("com-points");
@@ -23,6 +24,8 @@ function comChoose() {
 }
 
 function game(user, com) {
+    comLi.classList.remove("animation");
+    comLi.classList.add(com+"-img");
     
     if (user === "rock" && com === "scisor" || user === "paper" && com === "rock" || user === "scisor" && com === "paper") {
         playerScore++;
@@ -36,6 +39,9 @@ function game(user, com) {
             '</div>',
             icon: 'success',
             confirmButtonText: 'Volver a jugar'
+          }).then((result) => {
+            comLi.classList.add("animation");
+            comLi.classList.remove(com+"-img");
           })
     }
 
@@ -51,6 +57,9 @@ function game(user, com) {
             '</div>',
             icon: 'error',
             confirmButtonText: 'Volver a jugar'
+          }) .then((result) => {
+            comLi.classList.add("animation");
+            comLi.classList.remove(com+"-img");
           })
     }
 
@@ -64,6 +73,9 @@ function game(user, com) {
             '</div>',
             icon: 'info',
             confirmButtonText: 'Volver a jugar'
+          }) .then((result) => {
+            comLi.classList.add("animation");
+            comLi.classList.remove(com+"-img");
           })
     }
 

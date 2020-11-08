@@ -68,10 +68,21 @@ header h3 {
 .game-zone--com .com {
     width: 100px;
     height: 100px;
-    animation: .7s random infinite;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+}
+.game-zone--com .animation {
+    animation: .7s random infinite;
+}
+.rock-img {
+    background: url(../img/rock.png);
+}
+.paper-img {
+    background: url(../img/paper.png);
+}
+.scisor-img {
+    background: url(../img/scisor.png);
 }
 @keyframes random {
     0%{
