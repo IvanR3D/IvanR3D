@@ -4,9 +4,11 @@ const scisor = document.getElementById("scisor");
 
 var playerPoints = document.getElementById("player-points");
 var comPoints = document.getElementById("com-points");
+var playerScore = 0;
+var comScore = 0;
 
-playerPoints.innerText = "0";
-comPoints.innerText = "0";
+playerPoints.innerText = playerScore + '';
+comPoints.innerText = comScore + '';
 
 function comChoose() {
     let com = Math.round(Math.random() * 2);
@@ -23,6 +25,8 @@ function comChoose() {
 function game(user, com) {
     
     if (user === "rock" && com === "scisor" || user === "paper" && com === "rock" || user === "scisor" && com === "paper") {
+        playerScore++;
+        playerPoints.innerText = playerScore + '';
         Swal.fire({
             title: '¡Ganaste!',
             html:
@@ -36,6 +40,8 @@ function game(user, com) {
     }
 
     else if (user === "paper" && com === "scisor" || user === "scisor" && com === "rock" || user === "rock" && com === "paper") {
+        comScore++;
+        comPoints.innerText = comScore + '';
         Swal.fire({
             title: '¡Perdiste!',
             html:
